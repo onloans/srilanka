@@ -6,8 +6,10 @@
   <title>Quick Loans - Sri Lanka</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background-color: #fafafa;
+      background-image: radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px);
+      background-size: 18px 18px;
+      background: #fafafa;
       margin: 0;
       padding: 10px;
     }
@@ -23,6 +25,17 @@
       color: #555;
       margin-bottom: 25px;
     }
+    .notice {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 0 auto 25px;
+      max-width: 700px;
+      font-size: 1em;
+      text-align: center;
+    }
     .cards {
       display: flex;
       flex-wrap: wrap;
@@ -30,6 +43,7 @@
       gap: 20px;
     }
     .card {
+      overflow: hidden;
       background: #ffffe0;
       border-radius: 12px;
       padding: 15px;
@@ -61,21 +75,48 @@
       text-align: center;
     }
     .card a {
-      margin-top: 10px;
-      padding: 16px 28px;
+      display: inline-block;
+      padding: 12px 20px;
       background: linear-gradient(90deg, #00c853, #64dd17);
       color: white;
       text-decoration: none;
-      border-radius: 50px;
+      border-radius: 8px;
       font-size: 1.1em;
       font-weight: bold;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-      transition: all 0.3s ease-in-out;
-      animation: pulse 2s infinite;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .card a:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+    .card a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    }
+    .card a:active::after {
+      width: 200%;
+      height: 200%;
+      opacity: 0;
+      transition: 0s;
     }
     .card a:hover {
-      transform: scale(1.08);
+      transform: scale(1.03);
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      background: linear-gradient(90deg, #0047ab, #2196f3);
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(0,200,83, 0.4); }
@@ -88,9 +129,27 @@
       font-size: 0.9em;
       color: #888;
     }
+    .how-it-works {
+      max-width: 700px;
+      margin: 40px auto 0;
+      padding: 0 15px;
+    }
+    .how-it-works h2 {
+      text-align: center;
+    }
+    .how-it-works ul {
+      line-height: 1.6;
+      font-size: 1em;
+    }
     @media (min-width: 600px) {
       .card {
         width: 45%;
+      }
+    }
+
+    @media (max-width: 599px) {
+      .card {
+        width: 48%;
       }
     }
     @media (min-width: 900px) {
@@ -103,10 +162,10 @@
 <body>
 <h1>💸 Best Loan Offers in Sri Lanka<br>💸 ශ්‍රී ලංකාවේ හොඳම ණය පහසුකම්</h1>
 <p class="subtitle">Compare, choose and apply in minutes. No hidden fees. Instant approval.</p>
-
+<div class="notice">🔁 <strong>If one company doesn't approve your loan — try others!</strong> Each lender has different rules. You can apply to multiple for higher chances.</div>
 <div class="cards">
   <div class="card">
-    <img src="https://s.iimg.su/s/09/A8zHYc7bYLl2h7m7u1zUoarTj8xWbiHG3wgKGf5H.png" alt="Fino.lk logo" loading="lazy">
+    <img src="https://s.iimg.su/s/09/A8zHYc7bYLl2h7m7u1zUoarTj8xWbiHG3wgKGf5H.png" alt="ceyLoan.lk logo" loading="lazy">
     <div class="badge">0% for 14 days</div>
     <p><strong>Loan:</strong> Up to LKR 100,000</p>
     <p><strong>Approval:</strong> Instantly</p>
@@ -114,14 +173,14 @@
     <a href="https://link.lead-cash.com/click?pid=1141&offer_id=558">💸 Get Money</a>
   </div>
   <div class="card">
-    <img src="https://s.iimg.su/s/09/0mOShG4MVOHDXz4HM3jG5LGdXYefxXchdLScWJeK.png" alt="Monigo.lk logo" loading="lazy">
+    <img src="https://s.iimg.su/s/09/0mOShG4MVOHDXz4HM3jG5LGdXYefxXchdLScWJeK.png" alt="CashX.lk logo" loading="lazy">
     <p><strong>Loan:</strong> LKR 3,000 – 100,000</p>
     <p><strong>First Term:</strong> 14 days</p>
     <p><strong>Approval:</strong> Within 1 hour</p>
     <a href="https://go.lead-cash.com/click?pid=1141&offer_id=288">💸 Get Money</a>
   </div>
   <div class="card">
-    <img src="https://s.iimg.su/s/09/beh5LJQKPKYTXQvOqHY4XmJKwgg1FOQFYV7BIKwh.jpg" alt="OnCredit.lk logo" loading="lazy">
+    <img src="https://i.ibb.co/hpNC6Zb/fafafa.png" alt="LoanPlus.lk logo" loading="lazy">
     <div class="badge">0% First Loan</div>
     <p><strong>Loan:</strong> LKR 5,000 – 50,000</p>
     <p><strong>Term:</strong> 5–30 days</p>
@@ -129,7 +188,7 @@
     <a href="https://link.lead-cash.com/click?pid=1141&offer_id=430">💸 Get Money</a>
   </div>
   <div class="card">
-    <img src="https://s.iimg.su/s/09/HGLnkMKJBtHlOuGQQYBX2f785Oksa63094DzkaKN.jpg" alt="Ceyloan.lk logo" loading="lazy">
+    <img src="https://i.ibb.co/YT4hs6d3/fafafa-3.png" alt="Ceyloan.lk logo" loading="lazy">
     <div class="badge">0% First Loan</div>
     <p><strong>Loan:</strong> Up to LKR 100,000</p>
     <p><strong>Requirements:</strong> NIC + Employment</p>
@@ -137,7 +196,7 @@
     <a href="https://link.lead-cash.com/click?pid=1141&offer_id=576">💸 Get Money</a>
   </div>
   <div class="card">
-    <img src="https://s.iimg.su/s/09/ADJH6TaznVJ3hf24aHeoSHEXiYpaD9dwIs27NIjp.png" alt="LoanPlus.lk logo" loading="lazy">
+    <img src="https://i.ibb.co/Zz23H9vd/fafafa-2.png" alt="LoanPlus.lk logo" loading="lazy">
     <p><strong>Loan:</strong> LKR 5,000 – 200,000</p>
     <p><strong>Term:</strong> 5–30 days</p>
     <p><strong>Age:</strong> 20–60</p>
@@ -152,10 +211,17 @@
     <a href="https://link.lead-cash.com/click?pid=1141&offer_id=400">💸 Get Money</a>
   </div>
 </div>
-
+<div class="how-it-works">
+  <h2>How to Get a Loan</h2>
+  <ul>
+    <li>1️⃣ Choose one of the companies above.</li>
+    <li>2️⃣ Click “Get Money” and fill the form.</li>
+    <li>3️⃣ If approved — money arrives within 15–30 minutes.</li>
+    <li>🔁 Not approved? Try other offers. Approval depends on your data.</li>
+  </ul>
+</div>
 <div class="footer">
   <p>© 2025 | All rights reserved | Your data is protected</p>
 </div>
 </body>
 </html>
-
